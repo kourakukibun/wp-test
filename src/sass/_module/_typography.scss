@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+@import "_base/variables";
+@import "_base/mixins";
+
+/* -----------------------------------------------------
+ * Typography
+ * -------------------------------------------------- */
+
+/* ----- Heading ----- */
+.mod-heading1,
+.mod-heading2,
+.mod-heading3,
+.mod-heading4,
+.mod-heading5,
+.mod-heading6 {
+	display: block;
+	font-weight: bold;
+	line-height: 1.22;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.mod-heading1 {
+	margin: 60px 0 0;
+	font-size: 2.4rem;
+}
+
+.mod-heading2 {
+	margin: 50px 0 0;
+	padding: 0 0 0 20px;
+	border-left: 4px solid #000;
+	font-size: 2.0rem;
+}
+
+.mod-heading3 {
+	margin: 40px 0 0;
+	border-bottom: 1px solid #000;
+	font-size: 1.8rem;
+}
+
+.mod-heading4 {
+	margin: 30px 0 0;
+	font-size: 1.6rem;
+}
+
+.mod-heading5 {
+	margin: 30px 0 0;
+	font-size: 1.4rem;
+}
+
+.mod-heading6 {
+	margin: 30px 0 0;
+	font-size: 1.4rem;
+}
+
+
+/* ----- Paragraph ----- */
+.mod-p {
+	margin: 20px 0 0;
+	line-height: 1.6;
+		&:first-child {
+		margin-top: 0;
+	}
+}
+
+
+/* ----- List ----- */
+.mod-ul {
+	margin: 20px 0 0;
+	display: table;
+
+	> li {
+		position: relative;
+		margin: 10px 0 0;
+		padding: 0 0 0 1em;
+		line-height: 1.5;
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 3px;
+			content: "•";
+			padding-right: 0.4em;
+			color: $color-text;
+			font-weight: bold;
+		}
+	}
+}
+
+.mod-ol {
+	margin: 20px 0 0;
+	padding: 0 0 0 1em;
+	list-style-type: decimal;
+
+	> li {
+		margin: 10px 0 0;
+		list-style-type: decimal;
+		line-height: 1.5;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.mod-dl {
+	margin: 20px 0 0;
+	dt {
+		margin: 10px 0 0;
+		font-weight: bold;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	dd {
+		margin: 10px 0 0 10px;
+	}
+}

@@ -1,0 +1,25 @@
+<?php get_header(); ?>
+
+<body>
+
+<div class="l-wrapper" id="top">
+
+<?php include('template-parts/template-header.php'); ?>
+
+<div class="l-kv">
+<img src="http://placeimg.com/1000/300/nature" alt="" class="mod-img2bg">
+</div><!-- /.l-kv -->
+
+<!-- [[ CONTENT-AREA ]] -->
+<div class="l-contents">
+<main class="l-main">
+{% block content_main %}
+{% endblock %}
+</main>
+</div><!-- /.l-contents -->
+
+</div><!-- /.l-wrapper -->
+
+<?php include('template-parts/template-footer.php'); ?>
+
+<?php get_footer(); ?>

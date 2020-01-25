@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+@import "_base/variables";
+@import "_base/mixins";
+
+/* -----------------------------------------------------
+ * Utilities
+ * -------------------------------------------------- */
+/*docs
+---
+title: テキスト寄せ
+name: util-010
+category: utilities
+---
+
+```html
+<p class="mod-left">.mod-left</p>
+<p class="mod-center">.mod-center</p>
+<p class="mod-right">.mod-right</p>
+```
+*/
+.mod-left {
+	text-align: left !important;
+}
+
+.mod-center {
+	text-align: center !important;
+}
+
+.mod-right {
+	text-align: right !important;
+}
+
+
+/*docs
+---
+title: メディア表示
+name: util-020
+category: utilities
+---
+
+```html
+<div class="is-pc-hide">PC非表示（指定がなければSP表示）</div>
+<div class="is-pc-show">PCでは必ず表示（指定がなければSP表示）</div>
+<div class="is-sp-show">SPでは必ず表示（指定がなければPC表示）</div>
+<div class="is-sp-hide">SP非表示（指定がなければPC表示）</div>
+<p>テキストテキストテキスト。<br class="is-br-sp-show">SPでは改行が入る。</p>
+<p>テキストテキストテキスト。<br class="is-br-pc-show">PCでは改行が入る。</p>
+```
+*/
+.is-pc-hide {
+	@include media-pc {
+		display: none !important;
+	}
+}
+
+.is-pc-show {
+	@include media-pc {
+		display: block !important;
+	}
+}
+
+.is-sp-show {
+	@include media-sp {
+		display: block !important;
+	}
+}
+
+.is-sp-hide {
+	@include media-sp {
+		display: none !important;
+	}
+}
+
+.is-br-sp-show {
+	display: none;
+	@include media-sp {
+		display: inline-block !important;
+	}
+}
+
+.is-br-pc-show {
+	display: none;
+	@include media-pc {
+		display: inline-block !important;
+	}
+}
+
+
+/*docs
+---
+title: JSメディアチェック用
+name: util-030
+category: utilities
+---
+SP表示チェック。
+- jQueryのis(':visible')を利用することで、JSとCSSの同期が取れる。
+- SP時に display: block; となる。
+
+```html
+<div class="check-media">SP時 display: block;</div>
+```
+*/
+.check-media {
+	display: block;
+	@include media-pc {
+		display: none;
+	}
+}
