@@ -60,6 +60,12 @@
 	}
 }
 
+@mixin media-tb {
+	@media print, screen and (min-width: $break-point + 1) and (max-width: $break-point-pc) {
+		@content;
+	}
+}
+
 @mixin media-pc {
 	@media print, screen and (min-width: $break-point + 1) {
 		@content;

@@ -15,7 +15,6 @@
 .mod-heading5,
 .mod-heading6 {
 	display: block;
-	font-weight: bold;
 	line-height: 1.22;
 	&:first-child {
 		margin-top: 0;
@@ -23,100 +22,156 @@
 }
 
 .mod-heading1 {
-	margin: 60px 0 0;
-	font-size: 2.4rem;
+	margin: calcvw(60) 0 0;
+	font-size: calcvw(64);
+	@include media-pc {
+		margin: 60px 0 0;
+		font-size: 3.2rem;
+	}
 }
 
 .mod-heading2 {
-	margin: 50px 0 0;
-	padding: 0 0 0 20px;
-	border-left: 4px solid #000;
-	font-size: 2.0rem;
+	margin: calcvw(50) 0 0;
+	color: #3372df;
+	font-size: calcvw(52);
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	text-align: center;
+	@include media-pc {
+		margin: 50px 0 0;
+		border-width: 4px;
+		font-size: 2.6rem;
+	}
 }
 
+article h2,
 .mod-heading3 {
-	margin: 40px 0 0;
+	margin: calcvw(40) 0 0;
+	padding: 0 0 calcvw(10);
 	border-bottom: 1px solid #000;
-	font-size: 1.8rem;
+	font-size: calcvw(44);
+	@include media-pc {
+		margin: 40px 0 0;
+		padding: 0 0 10px;
+		font-size: 2.2rem;
+	}
 }
 
+article h3,
 .mod-heading4 {
-	margin: 30px 0 0;
-	font-size: 1.6rem;
+	margin: calcvw(30) 0 0;
+	font-size: calcvw(32);
+	@include media-pc {
+		margin: 30px 0 0;
+		font-size: 1.6rem;
+	}
 }
 
+article h4,
 .mod-heading5 {
-	margin: 30px 0 0;
-	font-size: 1.4rem;
-}
-
-.mod-heading6 {
-	margin: 30px 0 0;
-	font-size: 1.4rem;
+	margin: calcvw(30) 0 0;
+	fonot-size: calcvw(28);
+	@include media-pc {
+		margin: 30px 0 0;
+		font-size: 1.4rem;
+	}
 }
 
 
 /* ----- Paragraph ----- */
+article p,
 .mod-p {
-	margin: 20px 0 0;
-	line-height: 1.6;
-		&:first-child {
+	margin: calcvw(20) 0 0;
+	font-size: calcvw(32);
+	font-weight: 300;
+	line-height: 1.8;
+	@include media-pc {
+		margin: 20px 0 0;
+		font-size: 1.6rem;
+	}
+	&:first-child {
 		margin-top: 0;
 	}
 }
 
 
 /* ----- List ----- */
+article ul,
 .mod-ul {
-	margin: 20px 0 0;
-	display: table;
-
+	margin: calcvw(20) 0 0;
+	@include media-pc {
+		margin: 20px 0 0;
+	}
 	> li {
 		position: relative;
-		margin: 10px 0 0;
+		margin: calcvw(5) 0 0;
 		padding: 0 0 0 1em;
+		font-size: calcvw(32);
+		font-weight: 300;
 		line-height: 1.5;
+		@include media-pc {
+			margin: 5px 0 0;
+			font-size: 1.6rem;
+		}
 		&:first-child {
 			margin-top: 0;
 		}
-
 		&:before {
+			content: "•";
 			position: absolute;
 			top: 0;
-			left: 3px;
-			content: "•";
+			left: calcvw(6);
 			padding-right: 0.4em;
 			color: $color-text;
 			font-weight: bold;
+			@include media-pc {
+				left: 3px;
+			}
 		}
 	}
 }
 
+article ol,
 .mod-ol {
-	margin: 20px 0 0;
+	margin: calcvw(20) 0 0;
 	padding: 0 0 0 1em;
 	list-style-type: decimal;
-
+	@include media-pc {
+		margin: 20px 0 0;
+	}
 	> li {
-		margin: 10px 0 0;
+		margin: calcvw(10) 0 0;
 		list-style-type: decimal;
 		line-height: 1.5;
+		@include media-pc {
+			margin: 10px 0 0;
+		}
 		&:first-child {
 			margin-top: 0;
 		}
 	}
 }
 
+article dl,
 .mod-dl {
-	margin: 20px 0 0;
+	margin: calcvw(20) 0 0;
+	@include media-pc {
+		margin: 20px 0 0;
+	}
 	dt {
-		margin: 10px 0 0;
+		margin: calcvw(10) 0 0;
 		font-weight: bold;
+		@include media-pc {
+			margin: 10px 0 0;
+		}
 		&:first-child {
 			margin-top: 0;
 		}
 	}
 	dd {
-		margin: 10px 0 0 10px;
+		margin: calcvw(10) 0 0 calcvw(10);
+		@include media-pc {
+			margin: 10px 0 0 10px;
+		}
 	}
 }

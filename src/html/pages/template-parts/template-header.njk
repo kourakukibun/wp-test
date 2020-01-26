@@ -1,22 +1,25 @@
-<!-- [ HEADER-AREA ] -->
 <header class="l-header">
 <div class="l-header-inner">
-<h1 class="l-header-logo"><a href="/">タイトル</a></h1>
+<?php if ( is_home() || is_front_page() ) : ?>
+<h1 class="l-header-title"><a href="/"><span class="logo">Portfolio</span><span class="text">Mori Tomohide</span></a></h1>
+<?php else : ?>
+<span class="l-header-title"><a href="/"><span class="logo">Portfolio</span><span class="text">Mori Tomohide</span></a></span>
+<?php endif; ?>
 
-<button class="l-header-toggle mod-sp-menu">MENU</button>
+<button class="l-header-toggle mod-sp-menu"><span class="fas fa-bars"></span><span class="sr-only">MENU</span></button>
 
 <div class="l-header-menu">
 <div class="l-header-menu-inner">
 <nav class="l-header-nav">
 <ul class="mod-header-nav">
-<li class="is-current"><a href="/">ホーム</a></li>
-<li><a href="DUMMY">ヘッダーナビ2</a></li>
-<li><a href="DUMMY">ヘッダーナビ3</a></li>
-<li><a href="DUMMY">ヘッダーナビ4</a></li>
-<li><a href="DUMMY">ヘッダーナビ5</a></li>
-<li><a href="DUMMY">ヘッダーナビ6</a></li>
-<li><a href="DUMMY">ヘッダーナビ7</a></li>
-<li><a href="DUMMY">ヘッダーナビ8</a></li>
+<?php if ( is_home() || is_front_page() ) : ?>
+<li><a href="#about">About</a></li>
+<li><a href="#lineup">Lineup</a></li>
+<li><a href="#parts">Parts</a></li>
+<li><a href="#contact">Contact</a></li>
+<?php else : ?>
+<li><a href="/">Home</a></li>
+<?php endif; ?>
 </ul>
 </nav><!-- /.l-header-nav -->
 <div class="l-header-close">
@@ -27,5 +30,3 @@
 
 </div><!-- /.l-header-inner -->
 </header>
-<!-- /[ HEADER-AREA ] -->
-

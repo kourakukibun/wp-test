@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+@import "_base/variables";
+@import "_base/mixins";
+
+/* -----------------------------------------------------
+ * Parts
+ * -------------------------------------------------- */
+
+/* 情報系リスト */
+.mod-list-info {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin: calcvw(20) 0 0;
+		@include media-pc {
+			margin: 20px 0 0 -20px;
+		}
+	}
+	li {
+		width: 100%;
+		margin: calcvw(20) 0 0;
+		@include media-sp {
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		@include media-pc {
+			width: calc(25% - 20px);
+			margin: 20px 0 0 20px;
+		}
+		&:last-child {
+			.mod-list-info-text {
+				@include media-sp {
+					border: none;
+				}
+			}
+		}
+	}
+	a {
+		display: block;
+		height: 100%;
+		color: #333;
+		text-decoration: none;
+		.is-pc & {
+			&:hover {
+				figure {
+					transform: scale3d(1.1, 1.1, 1);
+				}
+				.mod-list-info-text {
+					.text {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+	}
+	&-image { // .mod-list-info-image
+		overflow: hidden;
+		height: calcvw(400);
+		@include media-pc {
+			height: 200px;
+		}
+		@include media-tb {
+			height: calcvw(200, 1200);
+		}
+	}
+	figure {
+		height: 100%;
+		transition: transform 0.3s ease-in-out;
+	}
+	&-text { // .mod-list-info-text
+		padding: calcvw(20) calcvw(10);
+		@include media-sp {
+			border-bottom: 1px solid #ccc;
+		}
+		@include media-pc {
+			padding: 10px;
+		}
+		span {
+			display: block;
+			letter-spacing: 0.05em;
+		}
+		.date {
+			font-size: calcvw(24);
+			@include media-pc {
+				font-size: 1.2rem;
+			}
+		}
+		.text {
+			margin: calcvw(8) 0 0;
+			font-size: calcvw(28);
+			font-weight: bold;
+			transition: opacity 0.3s ease-in-out;
+			@include media-pc {
+				margin: 4px 0 0;
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+
+

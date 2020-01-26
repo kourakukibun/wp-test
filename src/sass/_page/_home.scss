@@ -6,6 +6,16 @@
 /* -----------------------------------------------------
  * Home
  * -------------------------------------------------- */
-.page-home {
-
+.home-image {
+	&-gulp {
+		height: calcvw(300);
+		@include media-pc {
+			height: 150px;
+		}
+	}
+	&-sass {
+		@include media-sp {
+			height: calcvw(300);
+		}
+	}
 }

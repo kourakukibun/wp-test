@@ -13,58 +13,82 @@
 	left: 0;
 	width: 100%;
 	height: calcvw(80);
+	padding: 0 calcvw(10);
 	z-index: 10;
-	padding: calcvw(14);
-	border-bottom: 1px solid #ccc;
-	background: #ededed;
-	box-shadow: 0 3px 5px rgba(#000, 0.3);
+	background: #f9f9f9;
+	box-shadow: 0 calcvw(3) calcvw(5) rgba(#000, 0.3);
 	@include media-pc {
-		min-width: 1200px;
-		height: 100px;
-		padding: 10px;
+		height: 80px;
+		padding: 0 10px;
+		box-shadow: 0 3px 5px rgba(#000, 0.3);
 	}
 
 	&-inner { // .l-header-inner
 		position: relative;
+		height: 100%;
 		@include media-pc {
-			max-width: 1200px;
+			max-width: 1180px;
 			margin: 0 auto;
 		}
 	}
 
-	&-logo { // .l-header-logo
+	&-title { // .l-header-title
+		display: block;
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: calcvw(5);
+		left: calcvw(5);
+		@include media-pc {
+			top: 5px;
+			left: 0;
+		}
 		a {
+			display: block;
+			color: #666;
+			font-family: $font-family-en;
+			text-decoration: none;
+			text-shadow: 0 2px 3px rgba(#000, 0.1);
+			.is-pc & {
+				transition: opacity 0.3s ease-in-out;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+		.logo {
 			@include text-hidden;
 			display: block;
-			width: calcvw(200);
-			height: calcvw(50);
-			background: url(http://placehold.jp/3d4070/ffffff/200x50.png?text=%E3%83%AD%E3%82%B4) no-repeat 50% 50%;
+			width: calcvw(182);
+			height: calcvw(43);
+			background: url(../img/logo_portfolio_01.png) no-repeat 50% 50%;
 			background-size: contain;
 			@include media-pc {
-				width: 200px;
-				height: 50px;
+				width: 182px;
+				height: 43px;
+			}
+		}
+		.text {
+			display: block;
+			padding: 0 0 0 calcvw(5);
+			font-size: calcvw(20);
+			@include media-pc {
+				padding: 0;
+				font-size: 1.8rem;
 			}
 		}
 	}
 
 	&-toggle { // .l-header-toggle
 		@include none-appearance;
-		@include text-hidden;
-		display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		position: absolute;
-		top: calcvw(5);
+		top: calcvw(10);
 		right: calcvw(15);
-		width: calcvw(40);
-		height: calcvw(40);
+		width: calcvw(60);
+		height: calcvw(60);
 		z-index: 2;
-		background-image: url(../img/ico_bars_01.png), url(../img/ico_times_01.png);
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: calcvw(40), 0;
-		transition: background-size 0.2s ease-in-out;
+		font-size: calcvw(50);
 		outline: none;
 		@include media-pc {
 			display: none;
@@ -86,9 +110,11 @@
 		@include media-pc {
 			display: block;
 			position: absolute;
-			top: 63px;
-			left: 0;
-			width: 100%;
+			top: 30px;
+			right: 0;
+			left: auto;
+			max-width: 500px;
+			height: auto;
 			padding: 0;
 		}
 		.is-menu-open & {
@@ -100,6 +126,7 @@
 			background-color: rgba(#000, 0.5);
 			@include media-pc {
 				overflow: visible;
+				height: auto;
 				background-color: transparent;
 			}
 		}
@@ -114,9 +141,6 @@
 		background: #f4f4f4;
 		@include media-pc {
 			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
 			margin: 0;
 			background: transparent;
 		}
@@ -155,8 +179,6 @@
 					width: calcvw(25);
 					height: calcvw(30);
 					margin: calcvw(3) 0 0 calcvw(10);
-					background: url(../img/ico_times_01.png) no-repeat 0 0;
-					background-size: contain;
 					vertical-align: top;
 				}
 			}
@@ -173,7 +195,6 @@
 
 .mod-header-nav {
 	display: block;
-	justify-content: space-between;
 	width: 100%;
 	padding: 0 calcvw(20);
 	background: #f4f4f4;
@@ -199,8 +220,6 @@
 			width: calcvw(15);
 			height: calcvw(25);
 			margin: calcvw(-12) 0 0;
-			background: url(../img/ico_arrow_right_01.png) no-repeat 0 0;
-			background-size: contain;
 		}
 		br {
 			display: none;
@@ -215,16 +234,18 @@
 	}
 	@include media-pc {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		width: 100%;
 		padding: 0;
 		background: transparent;
 		li {
+			margin: 0 0 0 40px;
 			border: none;
 			&:before {
 				display: none;
 			}
 			&:first-child {
+				margin: 0;
 				&:before {
 					display: none;
 				}

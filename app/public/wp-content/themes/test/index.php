@@ -4,13 +4,15 @@
 
 <div class="l-wrapper" id="top">
 
+<!-- [ HEADER-AREA ] -->
 <?php include('template-parts/template-header.php'); ?>
+<!-- /[ HEADER-AREA ] -->
 
 <div class="l-kv">
 <img src="http://placeimg.com/1000/300/nature" alt="" class="mod-img2bg">
 </div><!-- /.l-kv -->
 
-<!-- [[ CONTENT-AREA ]] -->
+<!-- [ CONTENT-AREA ] -->
 <div class="l-contents">
 <main class="l-main">
 
@@ -140,9 +142,12 @@
 
 </main>
 </div><!-- /.l-contents -->
+<!-- /[ CONTENT-AREA ] -->
+
+<!-- [ FOOTER-AREA ] -->
+<?php include('template-parts/template-footer.php'); ?>
+<!-- /[ FOOTER-AREA ] -->
 
 </div><!-- /.l-wrapper -->
-
-<?php include('template-parts/template-footer.php'); ?>
 
 <?php get_footer(); ?>

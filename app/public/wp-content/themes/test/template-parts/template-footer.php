@@ -1,16 +1,13 @@
-<!-- [ FOOTER-AREA ] -->
-<footer class="l-footer">
+<footer id="contact" class="l-footer">
+<p class="mod-pagetop"><a href="#top" data-scroll><span class="fas fa-arrow-up"></span><span class="sr-only">ページTOPへ</span></a></p>
 <div class="l-footer-inner">
-<p class="mod-pagetop"><a href="#top" data-scroll>ページTOPへ</a></p>
-<nav class="l-footer-nav">
-<ul>
-<li><a href="DUMMY">フッターーナビ</a></li>
-<li><a href="DUMMY">フッターーナビ</a></li>
-<li><a href="DUMMY">フッターーナビ</a></li>
-<li><a href="DUMMY">フッターーナビ</a></li>
-</ul>
-</nav>
-<p class="l-footer-copyright" lang="en">Copyright &copy; MORINOUPA All rights Reserved.</p>
+<div class="l-footer-text">
+<span class="name">Mori Tomohide</span>
+<span class="text">Webサイト制作・運用の仕事に携わり17年目になりました。<br>今後も、より多くの方々のお役に立てるサービスを提供していきたいと考えています。</span>
+<span class="text">Email: kourakukibun@hotmail.com</span>
+</div><!-- /.l-footer-text -->
+<figure class="l-footer-image">
+<img src="/wp-content/themes/test/assets/img/ph_mori.png" alt="">
+</figure>
 </div><!-- l-footer-inner -->
 </footer>
-<!-- /[ FOOTER-AREA ] -->

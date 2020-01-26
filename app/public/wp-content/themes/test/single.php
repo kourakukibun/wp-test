@@ -15,8 +15,16 @@
 <!-- [ CONTENT-AREA ] -->
 <div class="l-contents">
 <main class="l-main">
-{% block content_main %}
-{% endblock %}
+
+<div class="l-main-inner">
+<article class="l-section">
+<?php if (have_posts()): the_post(); ?>
+<h1 class="mod-heading2"><?php the_title(); ?></h1>
+<?php the_content(); ?>
+<?php endif; ?>
+</article><!-- /.l-section -->
+</div><!-- /.l-main-inner -->
+
 </main>
 </div><!-- /.l-contents -->
 <!-- /[ CONTENT-AREA ] -->

@@ -9,14 +9,25 @@
 body {
 	display: flex;
 	flex-direction: column;
-	&.is-menu-open,
+	@include media-sp {
+		&.is-menu-open {
+			overflow: hidden;
+		}
+	}
 	&.is-modal-open {
 		overflow: hidden;
 	}
-	@include media-pc {
-		min-width: 1200px;
-		&.is-menu-open {
-			overflow: visible;
-		}
+}
+
+figure {
+	text-align: center;
+	img {
+		max-width: 100%;
+		max-height: 100%;
 	}
+}
+
+em {
+	font-style: normal;
+	font-weight: bold;
 }

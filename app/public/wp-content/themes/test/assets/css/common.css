@@ -10,6 +10,8 @@
 
 @import url(//fonts.googleapis.com/css?family=Roboto:400,700,900);
 
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap);
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -263,6 +265,7 @@ body {
 
 a {
   color: #2196f3;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -336,28 +339,27 @@ body {
   flex-direction: column;
 }
 
-body.is-menu-open,
 body.is-modal-open {
   overflow: hidden;
+}
+
+figure {
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* -----------------------------------------------------
  * Utilities
  * -------------------------------------------------- */
-
-/*docs
----
-title: テキスト寄せ
-name: util-010
-category: utilities
----
-
-```html
-<p class="mod-left">.mod-left</p>
-<p class="mod-center">.mod-center</p>
-<p class="mod-right">.mod-right</p>
-```
-*/
 
 .mod-left {
   text-align: left !important;
@@ -371,48 +373,12 @@ category: utilities
   text-align: right !important;
 }
 
-/*docs
----
-title: メディア表示
-name: util-020
-category: utilities
----
-
-```html
-<div class="is-pc-hide">PC非表示（指定がなければSP表示）</div>
-<div class="is-pc-show">PCでは必ず表示（指定がなければSP表示）</div>
-<div class="is-sp-show">SPでは必ず表示（指定がなければPC表示）</div>
-<div class="is-sp-hide">SP非表示（指定がなければPC表示）</div>
-<p>テキストテキストテキスト。<br class="is-br-sp-show">SPでは改行が入る。</p>
-<p>テキストテキストテキスト。<br class="is-br-pc-show">PCでは改行が入る。</p>
-```
-*/
-
 .is-br-sp-show {
   display: none;
 }
 
 .is-br-pc-show {
   display: none;
-}
-
-/*docs
----
-title: JSメディアチェック用
-name: util-030
-category: utilities
----
-SP表示チェック。
-- jQueryのis(':visible')を利用することで、JSとCSSの同期が取れる。
-- SP時に display: block; となる。
-
-```html
-<div class="check-media">SP時 display: block;</div>
-```
-*/
-
-.check-media {
-  display: block;
 }
 
 /* -----------------------------------------------------
@@ -428,7 +394,6 @@ SP表示チェック。
 .mod-heading5,
 .mod-heading6 {
   display: block;
-  font-weight: bold;
   line-height: 1.22;
 }
 
@@ -442,108 +407,125 @@ SP表示チェック。
 }
 
 .mod-heading1 {
-  margin: 60px 0 0;
-  font-size: 2.4rem;
+  margin: 8vw 0 0;
+  font-size: 8.53333vw;
 }
 
 .mod-heading2 {
-  margin: 50px 0 0;
-  padding: 0 0 0 20px;
-  border-left: 4px solid #000;
-  font-size: 2.0rem;
+  margin: 6.66667vw 0 0;
+  color: #3372df;
+  font-size: 6.93333vw;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.05em;
 }
 
+article h2,
 .mod-heading3 {
-  margin: 40px 0 0;
+  margin: 5.33333vw 0 0;
+  padding: 0 0 1.33333vw;
   border-bottom: 1px solid #000;
-  font-size: 1.8rem;
+  font-size: 5.86667vw;
 }
 
+article h3,
 .mod-heading4 {
-  margin: 30px 0 0;
-  font-size: 1.6rem;
+  margin: 4vw 0 0;
+  font-size: 4.26667vw;
 }
 
+article h4,
 .mod-heading5 {
-  margin: 30px 0 0;
-  font-size: 1.4rem;
-}
-
-.mod-heading6 {
-  margin: 30px 0 0;
-  font-size: 1.4rem;
+  margin: 4vw 0 0;
+  fonot-size: 3.73333vw;
 }
 
 /* ----- Paragraph ----- */
 
+article p,
 .mod-p {
-  margin: 20px 0 0;
-  line-height: 1.6;
+  margin: 2.66667vw 0 0;
+  font-size: 4.26667vw;
+  font-weight: 300;
+  line-height: 1.8;
 }
 
+article p:first-child,
 .mod-p:first-child {
   margin-top: 0;
 }
 
 /* ----- List ----- */
 
+article ul,
 .mod-ul {
-  display: table;
-  margin: 20px 0 0;
+  margin: 2.66667vw 0 0;
 }
 
+article ul > li,
 .mod-ul > li {
   position: relative;
-  margin: 10px 0 0;
+  margin: 0.66667vw 0 0;
   padding: 0 0 0 1em;
+  font-size: 4.26667vw;
+  font-weight: 300;
   line-height: 1.5;
 }
 
+article ul > li:first-child,
 .mod-ul > li:first-child {
   margin-top: 0;
 }
 
+article ul > li:before,
 .mod-ul > li:before {
   content: '•';
   position: absolute;
   top: 0;
-  left: 3px;
+  left: 0.8vw;
   padding-right: 0.4em;
   color: #383737;
   font-weight: bold;
 }
 
+article ol,
 .mod-ol {
   list-style-type: decimal;
-  margin: 20px 0 0;
+  margin: 2.66667vw 0 0;
   padding: 0 0 0 1em;
 }
 
+article ol > li,
 .mod-ol > li {
   list-style-type: decimal;
-  margin: 10px 0 0;
+  margin: 1.33333vw 0 0;
   line-height: 1.5;
 }
 
+article ol > li:first-child,
 .mod-ol > li:first-child {
   margin-top: 0;
 }
 
+article dl,
 .mod-dl {
-  margin: 20px 0 0;
+  margin: 2.66667vw 0 0;
 }
 
+article dl dt,
 .mod-dl dt {
-  margin: 10px 0 0;
+  margin: 1.33333vw 0 0;
   font-weight: bold;
 }
 
+article dl dt:first-child,
 .mod-dl dt:first-child {
   margin-top: 0;
 }
 
+article dl dd,
 .mod-dl dd {
-  margin: 10px 0 0 10px;
+  margin: 1.33333vw 0 0 1.33333vw;
 }
 
 /* -----------------------------------------------------
@@ -554,6 +536,71 @@ SP表示チェック。
 
 .mod-ac-target {
   display: none;
+}
+
+/* -----------------------------------------------------
+ * Parts
+ * -------------------------------------------------- */
+
+/* 情報系リスト */
+
+.mod-list-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2.66667vw 0 0;
+}
+
+.mod-list-info li {
+  width: 100%;
+  margin: 2.66667vw 0 0;
+}
+
+.mod-list-info a {
+  display: block;
+  height: 100%;
+  color: #333;
+  text-decoration: none;
+}
+
+.is-pc .mod-list-info a:hover figure {
+  -webkit-transform: scale3d(1.1, 1.1, 1);
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+.is-pc .mod-list-info a:hover .mod-list-info-text .text {
+  opacity: 0.7;
+}
+
+.mod-list-info-image {
+  overflow: hidden;
+  height: 53.33333vw;
+}
+
+.mod-list-info figure {
+  height: 100%;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.mod-list-info-text {
+  padding: 2.66667vw 1.33333vw;
+}
+
+.mod-list-info-text span {
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.mod-list-info-text .date {
+  font-size: 3.2vw;
+}
+
+.mod-list-info-text .text {
+  margin: 1.06667vw 0 0;
+  font-size: 3.73333vw;
+  font-weight: bold;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* =====================================================
@@ -571,60 +618,78 @@ SP表示チェック。
   left: 0;
   width: 100%;
   height: 10.66667vw;
-  padding: 1.86667vw;
-  border-bottom: 1px solid #ccc;
-  background: #ededed;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  padding: 0 1.33333vw;
+  background: #f9f9f9;
+  box-shadow: 0 0.4vw 0.66667vw rgba(0, 0, 0, 0.3);
 }
 
 .l-header-inner {
   position: relative;
+  height: 100%;
 }
 
-.l-header-logo {
+.l-header-title {
+  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.66667vw;
+  left: 0.66667vw;
 }
 
-.l-header-logo a {
+.l-header-title a {
+  display: block;
+  color: #666;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-decoration: none;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.is-pc .l-header-title a {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.is-pc .l-header-title a:hover {
+  opacity: 0.7;
+}
+
+.l-header-title .logo {
   display: block;
   overflow: hidden;
-  width: 26.66667vw;
-  height: 6.66667vw;
-  background: url(http://placehold.jp/3d4070/ffffff/200x50.png?text=%E3%83%AD%E3%82%B4) no-repeat 50% 50%;
+  width: 24.26667vw;
+  height: 5.73333vw;
+  background: url(../img/logo_portfolio_01.png) no-repeat 50% 50%;
   background-size: contain;
   white-space: nowrap;
   text-indent: 200%;
 }
 
+.l-header-title .text {
+  display: block;
+  padding: 0 0 0 0.66667vw;
+  font-size: 2.66667vw;
+}
+
 .l-header-toggle {
   outline: none;
-  display: block;
+  display: flex;
   position: absolute;
   z-index: 2;
-  top: 0.66667vw;
+  top: 1.33333vw;
   right: 2vw;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  width: 5.33333vw;
-  height: 5.33333vw;
+  width: 8vw;
+  height: 8vw;
   margin: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
   background: none transparent;
-  background-image: url(../img/ico_bars_01.png), url(../img/ico_times_01.png);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   background-clip: padding-box;
-  background-size: 5.33333vw, 0;
   color: inherit;
   font-size: inherit;
+  font-size: 6.66667vw;
   vertical-align: middle;
-  white-space: nowrap;
-  text-indent: 200%;
-  transition: background-size 0.2s ease-in-out;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -735,14 +800,11 @@ SP表示チェック。
   width: 3.33333vw;
   height: 4vw;
   margin: 0.4vw 0 0 1.33333vw;
-  background: url(../img/ico_times_01.png) no-repeat 0 0;
-  background-size: contain;
   vertical-align: top;
 }
 
 .mod-header-nav {
   display: block;
-  justify-content: space-between;
   width: 100%;
   padding: 0 2.66667vw;
   background: #f4f4f4;
@@ -774,8 +836,6 @@ SP表示チェック。
   width: 2vw;
   height: 3.33333vw;
   margin: -1.6vw 0 0;
-  background: url(../img/ico_arrow_right_01.png) no-repeat 0 0;
-  background-size: contain;
 }
 
 .mod-header-nav a br {
@@ -796,23 +856,33 @@ SP表示チェック。
 
 .l-footer {
   position: relative;
-  margin: 40px 0 0;
-  padding: 10px;
-  background: #ededed;
+  margin: 5.33333vw 0 0;
+  padding: 5.33333vw 1.33333vw;
+  background: #333;
+  color: #fff;
 }
 
-.l-footer-nav {
-  text-align: center;
+.l-footer-inner {
+  display: flex;
 }
 
-.l-footer-nav li {
-  display: inline-block;
-  margin: 0 5px;
+.l-footer-text {
+  letter-spacing: 0.05em;
 }
 
-.l-footer-copyright {
-  font-size: 1.0rem;
-  text-align: right;
+.l-footer-text .name {
+  display: block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 6.66667vw;
+  font-weight: 300;
+}
+
+.l-footer-text .text {
+  display: block;
+  margin: 2.66667vw 0 0;
+  font-size: 3.73333vw;
+  font-weight: 300;
+  line-height: 1.8;
 }
 
 .mod-pagetop {
@@ -820,11 +890,17 @@ SP表示チェック。
   z-index: 5;
   right: 1.33333vw;
   bottom: 2.66667vw;
+  font-size: 8vw;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   -webkit-transform: translateY(66.66667vw);
   transform: translateY(66.66667vw);
+}
+
+.mod-pagetop a {
+  display: block;
+  color: #333;
 }
 
 .is-pagetop-active .mod-pagetop {
@@ -902,7 +978,7 @@ SP表示チェック。
 }
 
 .l-main-inner {
-  padding: 2.66667vw;
+  padding: 0 1.33333vw;
 }
 
 .l-main-inner.bg-01 {
@@ -915,13 +991,24 @@ SP表示チェック。
 }
 
 .l-section {
-  padding: 5.33333vw 0;
+  position: relative;
+  padding: 8vw 0;
 }
 
-/* ----- Layout Sample ----- */
+.l-section-inner {
+  margin: 5.33333vw 0 0;
+}
 
-.l-sample {
-  padding: 5.33333vw 0;
+.l-section-inner > *:first-child {
+  margin-top: 0;
+}
+
+.l-column-inner {
+  margin: 5.33333vw 0 0;
+}
+
+.l-column-inner > *:first-child {
+  margin-top: 0;
 }
 
 /* =====================================================
@@ -932,15 +1019,11 @@ SP表示チェック。
  * Home
  * -------------------------------------------------- */
 
+.home-image-gulp {
+  height: 40vw;
+}
+
 @media print, screen and (min-width: 768px) {
-  body {
-    min-width: 1200px;
-  }
-
-  body.is-menu-open {
-    overflow: visible;
-  }
-
   .is-pc-hide {
     display: none !important;
   }
@@ -953,24 +1036,133 @@ SP表示チェック。
     display: inline-block !important;
   }
 
-  .check-media {
-    display: none;
+  .mod-heading1 {
+    margin: 60px 0 0;
+    font-size: 3.2rem;
   }
 
-  .l-header {
-    min-width: 1200px;
-    height: 100px;
+  .mod-heading2 {
+    margin: 50px 0 0;
+    border-width: 4px;
+    font-size: 2.6rem;
+  }
+
+  article h2,
+  .mod-heading3 {
+    margin: 40px 0 0;
+    padding: 0 0 10px;
+    font-size: 2.2rem;
+  }
+
+  article h3,
+  .mod-heading4 {
+    margin: 30px 0 0;
+    font-size: 1.6rem;
+  }
+
+  article h4,
+  .mod-heading5 {
+    margin: 30px 0 0;
+    font-size: 1.4rem;
+  }
+
+  article p,
+  .mod-p {
+    margin: 20px 0 0;
+    font-size: 1.6rem;
+  }
+
+  article ul,
+  .mod-ul {
+    margin: 20px 0 0;
+  }
+
+  article ul > li,
+  .mod-ul > li {
+    margin: 5px 0 0;
+    font-size: 1.6rem;
+  }
+
+  article ul > li:before,
+  .mod-ul > li:before {
+    left: 3px;
+  }
+
+  article ol,
+  .mod-ol {
+    margin: 20px 0 0;
+  }
+
+  article ol > li,
+  .mod-ol > li {
+    margin: 10px 0 0;
+  }
+
+  article dl,
+  .mod-dl {
+    margin: 20px 0 0;
+  }
+
+  article dl dt,
+  .mod-dl dt {
+    margin: 10px 0 0;
+  }
+
+  article dl dd,
+  .mod-dl dd {
+    margin: 10px 0 0 10px;
+  }
+
+  .mod-list-info ul {
+    margin: 20px 0 0 -20px;
+  }
+
+  .mod-list-info li {
+    width: calc(25% - 20px);
+    margin: 20px 0 0 20px;
+  }
+
+  .mod-list-info-image {
+    height: 200px;
+  }
+
+  .mod-list-info-text {
     padding: 10px;
   }
 
+  .mod-list-info-text .date {
+    font-size: 1.2rem;
+  }
+
+  .mod-list-info-text .text {
+    margin: 4px 0 0;
+    font-size: 1.4rem;
+  }
+
+  .l-header {
+    height: 80px;
+    padding: 0 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  }
+
   .l-header-inner {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
-  .l-header-logo a {
-    width: 200px;
-    height: 50px;
+  .l-header-title {
+    top: 5px;
+    left: 0;
+  }
+
+  .l-header-title .logo {
+    width: 182px;
+    height: 43px;
+  }
+
+  .l-header-title .text {
+    padding: 0;
+    font-size: 1.8rem;
   }
 
   .l-header-toggle {
@@ -980,22 +1172,22 @@ SP表示チェック。
   .l-header-menu {
     display: block;
     position: absolute;
-    top: 63px;
-    left: 0;
-    width: 100%;
+    top: 30px;
+    right: 0;
+    left: auto;
+    max-width: 500px;
+    height: auto;
     padding: 0;
   }
 
   .l-header-menu-inner {
     overflow: visible;
+    height: auto;
     background-color: transparent;
   }
 
   .l-header-nav {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
     margin: 0;
     background: transparent;
   }
@@ -1015,18 +1207,23 @@ SP表示チェック。
 
   .mod-header-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     padding: 0;
     background: transparent;
   }
 
   .mod-header-nav li {
+    margin: 0 0 0 40px;
     border: none;
   }
 
   .mod-header-nav li:before {
     display: none;
+  }
+
+  .mod-header-nav li:first-child {
+    margin: 0;
   }
 
   .mod-header-nav li:first-child:before {
@@ -1077,9 +1274,34 @@ SP表示チェック。
     letter-spacing: 0;
   }
 
+  .l-footer {
+    margin: 40px 0 0;
+    padding: 40px 0;
+  }
+
+  .l-footer-inner {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .l-footer-text .name {
+    font-size: 2.6rem;
+  }
+
+  .l-footer-text .text {
+    margin: 15px 0 0;
+    font-size: 1.6rem;
+  }
+
+  .l-footer-image {
+    height: 90px;
+    margin: 0 0 0 40px;
+  }
+
   .mod-pagetop {
     right: 10px;
     bottom: 20px;
+    font-size: 3.0rem;
   }
 
   .is-pagetop-fixed .mod-pagetop {
@@ -1087,7 +1309,7 @@ SP表示チェック。
   }
 
   .l-wrapper {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 
   .l-kv {
@@ -1104,23 +1326,63 @@ SP表示チェック。
   }
 
   .l-main-inner {
-    padding: 10px;
+    padding: 0 10px;
   }
 
   .l-section {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 40px 0;
   }
 
-  .l-sample {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 0;
+  .l-section-inner {
+    margin: 40px 0 0;
+  }
+
+  .l-column {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -40px;
+  }
+
+  .l-column-inner {
+    margin: 40px 0 0 40px;
+  }
+
+  .l-column-inner.wide-1 {
+    width: calc(25% - 40px);
+  }
+
+  .l-column-inner.wide-3 {
+    width: calc(75% - 40px);
+  }
+
+  .l-column.col-2 .l-column-inner {
+    width: calc(50% - 40px);
+  }
+
+  .l-column.col-3 .l-column-inner {
+    width: calc(33.33333% - 40px);
+  }
+
+  .l-column.alternate .l-column-inner:first-child {
+    order: 2;
+  }
+
+  .l-column.alternate .l-column-inner:last-child {
+    order: 1;
+  }
+
+  .home-image-gulp {
+    height: 150px;
   }
 }
 
 @media screen and (max-width: 767px) {
+  body.is-menu-open {
+    overflow: hidden;
+  }
+
   .is-sp-show {
     display: block !important;
   }
@@ -1131,6 +1393,40 @@ SP表示チェック。
 
   .is-br-sp-show {
     display: inline-block !important;
+  }
+
+  .mod-list-info li:first-child {
+    margin-top: 0;
+  }
+
+  .mod-list-info li:last-child .mod-list-info-text {
+    border: none;
+  }
+
+  .mod-list-info-text {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .l-footer-inner {
+    flex-direction: column;
+  }
+
+  .l-footer-text .text br {
+    display: none;
+  }
+
+  .l-footer-image {
+    display: none;
+  }
+
+  .home-image-sass {
+    height: 40vw;
+  }
+}
+
+@media print, screen and (min-width: 768px) and (max-width: 1200px) {
+  .mod-list-info-image {
+    height: 16.66667vw;
   }
 }
 

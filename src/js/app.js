@@ -5,56 +5,10 @@
   // Set Namespace
   var APP = window.APP = window.APP || {};
 
-  // サンプル処理（※参考用なので実装時は削除してください）
-  APP.SampleFunction = function ($elm) {
-    var that = this;
-    that.$elm = $elm;
-
-    that.init();
-
-    $(window).on('load resize', function () {
-      // CSSの表示切り替えと同じタミングでJSの処理を行うことが可能
-      if ($('.check-media').is(':visible')) {
-        console.log('SP表示');
-      } else {
-        console.log('PC表示');
-      }
-    });
-  };
-  APP.SampleFunction.prototype = {
-    init: function () {
-      var that = this;
-
-      // タイムライン処理
-      var d = new $.Deferred();
-      d.promise()
-        .then(function () {
-          setTimeout(function () {
-            that.procA();
-          }, 10);
-        })
-        .then(function () {
-          setTimeout(function () {
-            that.procB();
-          }, 500);
-        })
-        .then(function () {
-          setTimeout(function () {
-            that.procC();
-          }, 1000);
-        });
-      d.resolve();
-    },
-    procA: function() {
-      console.log('0.01秒経過');
-    },
-    procB: function() {
-      console.log('0.5秒経過');
-    },
-    procC: function() {
-      console.log('1秒経過');
-    }
-  };
+  // メディアクエリ（CSS定義）
+  APP.mqSp = window.matchMedia('(max-width: 767px)');
+  APP.mqPc = window.matchMedia('(min-width: 768px)');
+  APP.mqTb = window.matchMedia('(min-width: 768px) and (max-width: 1200px)');
 
   // SPメニューボタン設定
   APP.SetSpHeaderBtn = function ($elm) {
@@ -153,8 +107,10 @@
       that.winH = $(window).height();
       that.maxH = that.$footer.offset().top - that.winH;
       if (that.scr >= that.maxH) {
-        that.$body.addClass('is-pagetop-fixed');
-        that.$elm.css({'bottom': that.$footer.outerHeight() + 20 +'px'});
+        if ($(window).height() < that.$body.height()-that.$footer.outerHeight()) {
+          that.$body.addClass('is-pagetop-fixed');
+          that.$elm.css({'bottom': that.$footer.outerHeight() + 20 +'px'});
+        }
       } else if (that.scr > that.winH/2 && that.scr < that.maxH) {
         that.$body.addClass('is-pagetop-active').removeClass('is-pagetop-fixed');
         that.$elm.removeAttr('style');
@@ -175,9 +131,6 @@
       device.setTabletViewport();
     }
 
-    // mediaチェック用タグ追加
-    $('body').append('<div class="check-media"></div>');
-
     // 画像背景置換
     $('.mod-img2bg').each(function() {
       var src = $(this).attr('src');
@@ -192,11 +145,6 @@
       });
     });
 
-    // サンプル処理（※参考用なので実装時は削除してください）
-    $('.mod-sample').each(function () {
-      new APP.SampleFunction($(this));
-    });
-
     // SP メニューボタン設定
     $('.mod-sp-menu').each(function () {
       APP.spmenu = new APP.SetSpHeaderBtn($(this));
@@ -208,13 +156,20 @@
     });
 
     // ページ内リンク
+    var offset = 0;
     $('a[href^="#"]').on('click', function () {
+      if (APP.mqSp.matches) {
+        offset = $('.l-header').outerHeight();
+      } else {
+        offset = 80;
+      }
       if (!$(this).hasClass('no-scroll')) {
         var href = $(this).attr('href');
         var $target = $(href === '#' || href === '' ? 'html' : href);
         $target.velocity('scroll', {
           duration: 500,
-          easing: 'easeInOutQuad'
+          easing: 'easeInOutQuad',
+          offset: -(offset)
         });
         return false;
       }
@@ -248,15 +203,6 @@
 
       scrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + numPhotos + '&callback=processResult' );
       document.body.appendChild( scrElement );
-    });
-
-
-    // 固定ヘッダー横スクロール発生時に追従
-    // .l-headerにmin-widthを設定。
-    // HTMLの構成によっては邪魔する場合あり。
-    // 使用しない場合は、この処理と.l-headerのmin-widthを削除
-    $(window).on('scroll', function(){
-      $('.l-header').css('left', -$(window).scrollLeft());
     });
 
     // スクロールイベント（ページトップ）
