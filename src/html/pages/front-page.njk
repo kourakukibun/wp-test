@@ -150,10 +150,21 @@
 
 <div id="parts" class="l-main-inner">
 <div class="l-section">
-<h2 class="mod-heading2">News一覧サンプル</h2>
+<h2 class="mod-heading2">WP向けパーツ</h2>
+<h3 class="mod-heading3">新着情報サンプル</h3>
+<p class="mod-p">「news」カテゴリの投稿記事一覧サンプルです。</p>
 <?php
   set_query_var('newsnum', 4);
   get_template_part('product-parts/newslist');
+?>
+
+<h3 class="mod-heading3">標準ギャラリーカスタマイズ</h2>
+<p class="mod-p">Wordpress標準のギャラリーで取り込ませた画像をslickを使用してスライダーで表示させ、サムネイルとモーダルはオリジナルで処理を作成し追加してみました。</p>
+<?php
+$post_id = 56;
+$post = get_post($post_id, 'OBJECT', 'raw');
+$post_include = apply_filters( 'the_content',$post->post_content);
+echo $post_include;
 ?>
 </div><!-- /.l-section -->
 </div><!-- /.l-main-inner -->

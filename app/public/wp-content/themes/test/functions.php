@@ -32,4 +32,5 @@ function dequeue_plugins_style() {
   wp_dequeue_style('wp-block-library');
 }
 add_action( 'wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
+
 ?>
