@@ -121,6 +121,140 @@
     }
   };
 
+  APP.SetGallery = function ($elm, idx) {
+    var that = this;
+    that.$elm = $elm;
+    that.idx = idx;
+    that.$for = $elm.find('.blocks-gallery-grid');
+    that.$forItem = that.$for.find('.blocks-gallery-item');
+    that.$forLink = that.$for.find('a');
+    that.$nav = $('<div class="blocks-gallery-nav">').appendTo($elm);
+    that.$navInner = $('<div class="blocks-gallery-nav-inner">').appendTo(that.$nav);
+    that.CURRENT = 'is-current';
+    that.ACTIVE = 'is-active';
+    that.CLOSE = 'is-close';
+
+    that.$forItem.each(function() {
+      var src = $(this).find('img').attr('src');
+      $(this).css({
+        background: 'url(' + src + ') no-repeat 50% 50%',
+        'background-size': 'cover'
+      });
+      $(this).find('img').css({
+        visibility: 'hidden',
+        width: '100%',
+        height: '100%'
+      });
+      var $navItem = $('<div class="blocks-gallery-nav-item">').appendTo(that.$navInner);
+      $('<div class="blocks-gallery-nav-image">').appendTo($navItem).css({
+        background: 'url(' + src + ') no-repeat 50% 50%',
+        'background-size': 'cover'
+      });
+    });
+
+    that.$navItem = that.$nav.find('.blocks-gallery-nav-item');
+
+    that.$navItem.each(function (index) {
+      $(this).attr('data-index', index);
+    });
+
+    that.$for.on('init', function () {
+      var index = that.$for.find('.blocks-gallery-item.slick-slide.slick-current').attr('data-slick-index');
+      that.setNavSlide(index);
+    });
+
+    that.$for.slick({
+      prevArrow: '<button type="button" class="slick-prev"><span class="fas fa-angle-left"></span><span class="sr-only">前へ</span></button>',
+      nextArrow: '<button type="button" class="slick-next"><span class="fas fa-angle-right"></span><span class="sr-only">次へ</span></button>'
+    });
+
+    that.$navItem.on('click', function () {
+      var index = $(this).data('index');
+      that.setForSlide(index);
+    });
+
+    that.$for.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      $('.blocks-gallery-nav-item').removeClass(that.CURRENT);
+      that.setNavSlide(nextSlide);
+    });
+
+
+    if (that.$forLink.length) {
+      that.modalId = 'modal-' + that.idx;
+
+      that.$modal = $('<div id="' + that.modalId + '" class="mod-gallery-modal"></div>').appendTo('body');
+      that.$modalInner = $('<div class="mod-gallery-modal-inner"></div>').appendTo(that.$modal);
+      that.$modalPrev = $('<a href="javascript:void(0)" class="mod-gallery-modal-arrow prev" title="prev"><span class="fas fa-angle-left"></span><span class="sr-only">前へ</span></a>').appendTo(that.$modal);
+      that.$modalNext = $('<a href="javascript:void(0)" class="mod-gallery-modal-arrow next" title="next"><span class="fas fa-angle-right"></span><span class="sr-only">次へ</span></a>').appendTo(that.$modal);
+      that.$modalClose = $('<a href="javascript:void(0)" class="mod-gallery-modal-close" title="close"><span class="fas fa-times"></span><span class="sr-only">閉じる</span></a>').appendTo(that.$modal);
+      that.$forLink.each(function () {
+        that.$modalInner.append('<div class="mod-gallery-modal-item"><img src="' + $(this).children().attr('src') + '" alt=""></div>');
+      });
+      that.$modalItems = that.$modalInner.find('.mod-gallery-modal-item');
+      that.$targetModal = $('#' + that.modalId);
+      // that.modalIndex = that.modalIndex = parseInt($(this).parents('.mod-gallery-for-item').data('slick-index'));
+
+      that.$forLink.on('click', function (e) {
+        e.preventDefault();
+        that.modalIndex = parseInt($(this).parents('.blocks-gallery-item').data('slick-index'));
+        that.$targetModal.addClass(that.ACTIVE);
+        that.setModalSlide(that.modalIndex);
+      });
+
+      that.$modal.on('click', function () {
+        if (!$(event.target).closest('.mod-gallery-modal-item img').length && !$(event.target).closest('.mod-gallery-modal-arrow').length && !$(event.target).closest('.mod-gallery-modal-close').length) {
+          that.modalClose();
+        }
+      });
+      that.$modalPrev.on('click', function () {
+        that.$modalItems.removeClass(that.ACTIVE);
+        that.modalIndex--;
+        if (that.modalIndex < 0) {
+          that.modalIndex = that.$modalItems.length - 1;
+        }
+        that.setModalSlide(that.modalIndex);
+        that.setForSlide(that.modalIndex);
+        that.setNavSlide(that.modalIndex);
+      });
+      that.$modalNext.on('click', function () {
+        that.$modalItems.removeClass(that.ACTIVE);
+        that.modalIndex++;
+        if (that.modalIndex >= that.$modalItems.length) {
+          that.modalIndex = 0;
+        }
+        that.setModalSlide(that.modalIndex);
+        that.setForSlide(that.modalIndex);
+        that.setNavSlide(that.modalIndex);
+      });
+      that.$modalClose.on('click', function () {
+        that.modalClose();
+      });
+    }
+  };
+  APP.SetGallery.prototype = {
+    setForSlide: function (index) {
+      var that = this;
+      that.$for.slick('slickGoTo', index, false);
+    },
+    setNavSlide: function (index) {
+      var that = this;
+      that.$nav.find('.blocks-gallery-nav-item[data-index="' + index + '"]').addClass(that.CURRENT);
+    },
+    modalClose: function () {
+      var that = this;
+      that.$targetModal.addClass(that.CLOSE);
+      that.$modalInner.find('.mod-gallery-modal-item').removeClass(that.ACTIVE);
+      setTimeout(function () {
+        that.$targetModal.removeClass(that.ACTIVE + ' ' + that.CLOSE);
+      }, 310);
+    },
+    setModalSlide: function () {
+      var that = this;
+      that.$modalInner.find('.mod-gallery-modal-item').eq(that.modalIndex).addClass(that.ACTIVE);
+    }
+  };
+
+
   $(function () {
     var html = window.document.getElementsByTagName('html');
     // デバイス情報にもとづくクラス名をbodyに追加
@@ -130,6 +264,11 @@
     if ($('html').hasClass('is-tablet')) {
       device.setTabletViewport();
     }
+
+    // ギャラリー
+    $('.wp-block-gallery').each(function (index) {
+      new APP.SetGallery($(this), index);
+    });
 
     // 画像背景置換
     $('.mod-img2bg').each(function() {

@@ -239,3 +239,22 @@ $sp-design-width: 750; // SPデザインの幅を設定
 	}
 	border-style: solid;
 }
+
+// ----
+// * fontawesome
+// * ex) @include fontawesome;
+// *     font-size: 20px;
+// *     &:before {
+// *         content: '\f0e0';
+// *     }
+// ----
+@mixin fontawesome() {
+	display: inline-block;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 900;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+}

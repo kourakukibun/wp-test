@@ -1,4 +1,4 @@
 <!-- [ SCRIPTS ] -->
-<script src="{{ dataProject.wp_path }}js/libs/libs.js"></script>
-<script src="{{ dataProject.wp_path }}js/app.bundle.js"></script>
+<script src="{{ dataProject.wp_path }}js/libs/libs.js?<?php echo filemtime( get_stylesheet_directory() . '/assets/js/libs/libs.js'); ?>"></script>
+<script src="{{ dataProject.wp_path }}js/app.bundle.js?<?php echo filemtime( get_stylesheet_directory() . '/assets/js/app.bundle.js'); ?>"></script>
 <!-- /[ SCRIPTS ] -->
