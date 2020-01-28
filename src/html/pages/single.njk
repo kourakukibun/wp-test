@@ -5,9 +5,14 @@
 <article class="l-section">
 <?php if (have_posts()): the_post(); ?>
 <h1 class="mod-heading2"><?php the_title(); ?></h1>
-<?php the_content(); ?>
+<?php if (has_post_thumbnail()): ?>
+<figure><?php the_post_thumbnail( 'full' ); ?></figure>
 <?php endif; ?>
-<?php get_template_part('template-parts/template-pagination'); ?>
+<?php
+  the_content();
+  endif;
+  get_template_part('template-parts/template-pagination');
+?>
 </article><!-- /.l-section -->
 </div><!-- /.l-main-inner -->
 {% endblock %}

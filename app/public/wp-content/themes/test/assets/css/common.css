@@ -344,12 +344,19 @@ body.is-modal-open {
 }
 
 figure {
+  margin: 5.33333vw 0;
   text-align: center;
 }
 
 figure img {
+  width: auto;
   max-width: 100%;
+  height: auto;
   max-height: 100%;
+}
+
+h1 + figure img {
+  max-height: 80vw;
 }
 
 em {
@@ -1344,6 +1351,14 @@ article dl dd,
 }
 
 @media print, screen and (min-width: 768px) {
+  figure {
+    margin: 40px 0;
+  }
+
+  h1 + figure img {
+    max-height: 400px;
+  }
+
   .is-pc-hide {
     display: none !important;
   }

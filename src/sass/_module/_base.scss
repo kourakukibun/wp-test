@@ -20,10 +20,24 @@ body {
 }
 
 figure {
+	margin: calcvw(40) 0;
 	text-align: center;
+	@include media-pc {
+		margin: 40px 0;
+	}
 	img {
 		max-width: 100%;
+		width: auto;
 		max-height: 100%;
+		height: auto;
+	}
+	h1 + & {
+		img {
+			max-height: calcvw(600);
+			@include media-pc {
+				max-height: 400px;
+			}
+		}
 	}
 }
 
