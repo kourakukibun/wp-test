@@ -7,7 +7,7 @@
 <span class="text">Email: kourakukibun@hotmail.com</span>
 </div><!-- /.l-footer-text -->
 <figure class="l-footer-image">
-<img src="/wp-content/themes/test/assets/img/ph_mori.png" alt="">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/ph_mori.png" alt="">
 </figure>
 </div><!-- l-footer-inner -->
 </footer>

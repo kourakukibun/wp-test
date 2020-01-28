@@ -123,10 +123,6 @@
 		&-inner { // .blocks-gallery-nav-inner
 			display: inline-flex;
 			flex-wrap: wrap;
-			max-width: calcvw(680);
-			@include media-pc {
-				max-width: 464px;
-			}
 		}
 		&-item { // .blocks-gallery-nav-item
 			overflow: hidden;

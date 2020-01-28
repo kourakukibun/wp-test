@@ -22,7 +22,7 @@
 <div class="l-column">
 <div class="l-column-inner wide-1">
 <figure class="home-image-gulp">
-<img src="/wp-content/themes/test/assets/img/home/logo_gulp.png" alt="gulp">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/logo_gulp.png" alt="gulp">
 </figure>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner wide-3">
@@ -41,7 +41,7 @@
 <div class="l-column alternate">
 <div class="l-column-inner wide-1">
 <figure>
-<img src="/wp-content/themes/test/assets/img/home/logo_njk.png" alt="Nunjucks">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/logo_njk.png" alt="Nunjucks">
 </figure>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner wide-3">
@@ -56,7 +56,7 @@
 <div class="l-column">
 <div class="l-column-inner wide-1">
 <figure class="home-image-sass">
-<img src="/wp-content/themes/test/assets/img/home/logo_sass.png" alt="Sass">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/logo_sass.png" alt="Sass">
 </figure>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner wide-3">
@@ -86,7 +86,7 @@
 <div class="l-column col-2">
 <div class="l-column-inner">
 <figure>
-<img src="/wp-content/themes/test/assets/img/home/product_01.png" alt="">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/product_01.png" alt="">
 </figure>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner">
@@ -109,7 +109,7 @@
 <div class="l-column col-2">
 <div class="l-column-inner">
 <figure>
-<img src="/wp-content/themes/test/assets/img/home/product_02.png" alt="">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/product_02.png" alt="">
 </figure>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner">
@@ -131,7 +131,7 @@
 <div class="l-column col-2">
 <div class="l-column-inner">
 <figure>
-<img src="/wp-content/themes/test/assets/img/home/product_03.png" alt="">
+<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/product_03.png" alt="">
 </figure>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner">
