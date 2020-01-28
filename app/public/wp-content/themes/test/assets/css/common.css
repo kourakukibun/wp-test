@@ -621,6 +621,22 @@ article dl dd,
   transition: opacity 0.3s ease-in-out;
 }
 
+/* ページャー */
+
+.mod-pager {
+  display: flex;
+  justify-content: space-between;
+  margin: 8vw 0 0;
+}
+
+.mod-pager-inner.next span {
+  margin-right: 0.5em;
+}
+
+.mod-pager-inner.prev span {
+  margin-left: 0.5em;
+}
+
 /* -----------------------------------------------------
  * Custom
  * -------------------------------------------------- */
@@ -1434,6 +1450,10 @@ article dl dd,
   .mod-list-info-text .text {
     margin: 4px 0 0;
     font-size: 1.4rem;
+  }
+
+  .mod-pager {
+    margin: 60px 0 0;
   }
 
   .wp-block-gallery {
