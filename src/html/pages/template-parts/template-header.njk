@@ -1,9 +1,9 @@
 <header class="l-header">
 <div class="l-header-inner">
 <?php if ( is_home() || is_front_page() ) : ?>
-<h1 class="l-header-title"><a href="/"><span class="logo">Portfolio</span><span class="text">Mori Tomohide</span></a></h1>
+<h1 class="l-header-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="logo">Portfolio</span><span class="text">Mori Tomohide</span></a></h1>
 <?php else : ?>
-<span class="l-header-title"><a href="/"><span class="logo">Portfolio</span><span class="text">Mori Tomohide</span></a></span>
+<span class="l-header-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="logo">Portfolio</span><span class="text">Mori Tomohide</span></a></span>
 <?php endif; ?>
 
 <button class="l-header-toggle mod-sp-menu"><span class="fas fa-bars"></span><span class="sr-only">MENU</span></button>
@@ -18,7 +18,7 @@
 <li><a href="#parts">Parts</a></li>
 <li><a href="#contact">Contact</a></li>
 <?php else : ?>
-<li><a href="/">Home</a></li>
+<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
 <?php endif; ?>
 </ul>
 </nav><!-- /.l-header-nav -->
