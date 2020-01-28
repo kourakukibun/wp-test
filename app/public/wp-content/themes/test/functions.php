@@ -33,7 +33,8 @@ function dequeue_plugins_style() {
 }
 add_action( 'wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
 
-function disp_specific_post($post_id) {
+function disp_specific_post($post_uri) {
+  $post_id = url_to_postid($post_uri);
   $post = get_post($post_id, 'OBJECT', 'raw');
   $post_include = apply_filters( 'the_content',$post->post_content);
   echo $post_include;

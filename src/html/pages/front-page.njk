@@ -161,7 +161,8 @@
 <h3 class="mod-heading3">標準ギャラリーカスタマイズ</h3>
 <p class="mod-p">Wordpress標準のギャラリーで取り込ませた画像をslickを使用してスライダーで表示させ、サムネイルとモーダルはオリジナルで処理を作成し追加してみました。</p>
 <?php
-  disp_specific_post(56);
+  $uri = esc_url(home_url()).'/gallery/standard';
+  disp_specific_post($uri);
 ?>
 </div><!-- /.l-section -->
 </div><!-- /.l-main-inner -->
