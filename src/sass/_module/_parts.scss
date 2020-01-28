@@ -103,19 +103,20 @@
 
 /* ページャー */
 .mod-pager {
-	display: flex;
-	justify-content: space-between;
+	@include clearfix;
 	margin: calcvw(60) 0 0;
 	@include media-pc {
 		margin: 60px 0 0;
 	}
 	&-inner { // .mod-pager-inner
 		&.next {
+			float: left;
 			span {
 				margin-right: 0.5em;
 			}
 		}
 		&.prev {
+			float: right;
 			span {
 				margin-left: 0.5em;
 			}

@@ -624,13 +624,25 @@ article dl dd,
 /* ページャー */
 
 .mod-pager {
-  display: flex;
-  justify-content: space-between;
   margin: 8vw 0 0;
+}
+
+.mod-pager:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.mod-pager-inner.next {
+  float: left;
 }
 
 .mod-pager-inner.next span {
   margin-right: 0.5em;
+}
+
+.mod-pager-inner.prev {
+  float: right;
 }
 
 .mod-pager-inner.prev span {
