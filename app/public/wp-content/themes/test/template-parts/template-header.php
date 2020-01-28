@@ -14,7 +14,7 @@
 <ul class="mod-header-nav">
 <?php if ( is_home() || is_front_page() ) : ?>
 <li><a href="#about">About</a></li>
-<li><a href="#lineup">Lineup</a></li>
+<li><a href="#lineup">Products</a></li>
 <li><a href="#parts">Parts</a></li>
 <li><a href="#contact">Contact</a></li>
 <?php else : ?>
