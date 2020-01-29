@@ -19,7 +19,10 @@
 		.blocks-gallery-item {
 			overflow: hidden;
 			position: relative;
-			height: 300px;
+			height: calcvw(500);
+			@include media-pc {
+				height: 400px;
+			}
 			&:before {
 				display: none;
 			}
@@ -131,7 +134,7 @@
 			height: calcvw(80);
 			margin: calcvw(10);
 			@include media-pc {
-				width: 106px;
+				width: 104px;
 				height: 60px;
 				margin: 5px;
 			}

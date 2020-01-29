@@ -87,9 +87,10 @@
 <p class="mod-p">日本女子大学光学部の依頼により制作した光学教材を紹介。</p>
 <div class="l-column col-2">
 <div class="l-column-inner">
-<figure>
-<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/product_01.png" alt="">
-</figure>
+<?php
+  $uri = esc_url(home_url()).'/gallery/ponjo';
+  disp_specific_post($uri);
+?>
 </div><!-- /.l-column-inner -->
 <div class="l-column-inner">
 <ul class="mod-ul">
@@ -159,7 +160,7 @@
 <li>メンバー：5人</li>
 <li>主担当　：コーディング</li>
 </ul>
-<p class="mod-p">斬新なデザインに加え、アクセシビリティ（AAレベル）準拠という厄介な問題に対応するコーディングを行わないといけない、という厄介な案件でした。守らないといけない規則が多いため、破綻させぬようコード設計にに注力しました。</p>
+<p class="mod-p">斬新なデザインに加え、アクセシビリティ（AAレベル）準拠という厄介な問題に対応するコーディングを行わないといけない、という案件でした。守らないといけない規則も多いため、破綻しないコード設計に注力しました。</p>
 <p class="mod-p">結果、本体のサイトにも一部参加できたので、いろんな意味で良い経験をさせていただきました。</p>
 </section><!-- /.l-section-inner -->
 </div><!-- /.l-section -->

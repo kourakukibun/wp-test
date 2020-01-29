@@ -674,7 +674,7 @@ article dl dd,
 .wp-block-gallery .blocks-gallery-grid .blocks-gallery-item {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 66.66667vw;
 }
 
 .wp-block-gallery .blocks-gallery-grid .blocks-gallery-item:before {
@@ -1488,6 +1488,10 @@ article dl dd,
     margin: 40px 0 0;
   }
 
+  .wp-block-gallery .blocks-gallery-grid .blocks-gallery-item {
+    height: 400px;
+  }
+
   .wp-block-gallery .blocks-gallery-grid .slick-arrow {
     width: 60px;
     height: 60px;
@@ -1517,7 +1521,7 @@ article dl dd,
   }
 
   .wp-block-gallery .blocks-gallery-nav-item {
-    width: 106px;
+    width: 104px;
     height: 60px;
     margin: 5px;
   }
