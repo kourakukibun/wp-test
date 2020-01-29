@@ -311,7 +311,7 @@
 
     that.$forItem.each(function() {
       var src = $(this).find('img').attr('src');
-      $(this).css({
+      $(this).find('figure a').css({
         background: 'url(' + src + ') no-repeat 50% 50%',
         'background-size': 'cover'
       });
