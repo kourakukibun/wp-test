@@ -174,7 +174,7 @@
     });
 
     that.$for.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-      $('.blocks-gallery-nav-item').removeClass(that.CURRENT);
+      that.$elm.find('.blocks-gallery-nav-item').removeClass(that.CURRENT);
       that.setNavSlide(nextSlide);
     });
 
@@ -192,7 +192,6 @@
       });
       that.$modalItems = that.$modalInner.find('.mod-gallery-modal-item');
       that.$targetModal = $('#' + that.modalId);
-      // that.modalIndex = that.modalIndex = parseInt($(this).parents('.mod-gallery-for-item').data('slick-index'));
 
       that.$forLink.on('click', function (e) {
         e.preventDefault();
