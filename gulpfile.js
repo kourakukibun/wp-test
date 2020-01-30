@@ -85,7 +85,7 @@ const getDataJson = function (file) {
 };
 
 gulp.task('html', function () {
-  var getDataProject = getDataJson('./project.json');
+  // var getDataProject = getDataJson('./project.json');
   var currentFile;
 
   gulp.src([
@@ -107,9 +107,9 @@ gulp.task('html', function () {
     .pipe($.nunjucksRender({
       path: [config.path.src.html],
       ext: '.php',
-      data: {
-        dataProject: getDataProject
-      },
+      // data: {
+      //   dataProject: getDataProject
+      // },
       envOptions: {
         autoescape: false
       },
@@ -255,7 +255,7 @@ gulp.task('serve', function () {
   });
 
   $.watch([
-    'project.json',
+    // 'project.json',
     config.path.src.html + '**/*.njk'
   ], function () {
     gulp.start(['html']);

@@ -9,22 +9,22 @@ lint:
 # ----------------------------------------
 # パス設定
 # ----------------------------------------
-srcRoot:  'src/'
-destRoot: 'app/public/wp-content/themes/test/'
+srcRoot:   'src/'
+destRoot:  'app/public/wp-content/themes/test/'
 
 path:
   src:
-    html:       'src/html/'
-    sass:       'src/sass/'
-    js:         'src/js/'
+    html:  'src/html/'
+    sass:  'src/sass/'
+    js:    'src/js/'
     libs:
-      css:      'src/libs/css/'
-      js:       'src/libs/js/'
+      css: 'src/libs/css/'
+      js:  'src/libs/js/'
   dest:
-    html:       'app/public/wp-content/themes/test/'
-    css:        'app/public/wp-content/themes/test/assets/css/'
-    img:        'app/public/wp-content/themes/test/assets/img/'
-    js:         'app/public/wp-content/themes/test/assets/js/'
+    html:  'app/public/wp-content/themes/test/'
+    css:   'app/public/wp-content/themes/test/assets/css/'
+    img:   'app/public/wp-content/themes/test/assets/img/'
+    js:    'app/public/wp-content/themes/test/assets/js/'
 
 # ----------------------------------------
 # タスク設定
