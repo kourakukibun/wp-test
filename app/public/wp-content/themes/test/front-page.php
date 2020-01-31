@@ -8,13 +8,16 @@
 <?php include('template-parts/template-header.php'); ?>
 <!-- /[ HEADER-AREA ] -->
 
-<div class="l-kv">
-<img src="http://placeimg.com/1000/300/nature" alt="" class="mod-img2bg">
-</div><!-- /.l-kv -->
-
 <!-- [ CONTENT-AREA ] -->
 <div class="l-contents">
 <main class="l-main">
+
+<div class="l-main-inner bg-02">
+<section class="l-section">
+<h2 class="mod-heading2">Mori Tomohide</h2>
+<p class="mod-p mod-center">Webサイト制作・運用の仕事に携わり17年目になりました。<br>今後も、より多くの方々のお役に立てるサービスを提供していきたいと考えています。</p>
+</section><!-- /.l-section -->
+</div><!-- /.l-main-inner -->
 
 <div id="about" class="l-main-inner">
 <section class="l-section">

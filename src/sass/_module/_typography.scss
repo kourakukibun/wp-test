@@ -53,7 +53,10 @@
 	@include media-pc {
 		margin: 50px 0 0;
 		border-width: 4px;
-		font-size: 2.6rem;
+		font-size: 2.8rem;
+	}
+	.l-main-inner.bg-02 & {
+		color: #fff;
 	}
 }
 

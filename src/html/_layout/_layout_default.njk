@@ -8,10 +8,6 @@
 <?php include('template-parts/template-header.php'); ?>
 <!-- /[ HEADER-AREA ] -->
 
-<div class="l-kv">
-<img src="http://placeimg.com/1000/300/nature" alt="" class="mod-img2bg">
-</div><!-- /.l-kv -->
-
 <!-- [ CONTENT-AREA ] -->
 <div class="l-contents">
 <main class="l-main">
