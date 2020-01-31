@@ -1,0 +1,14 @@
+{% extends "_layout/_layout_default.njk" %}
+
+{% block content_main %}
+<div class="l-main-inner">
+<div class="l-section">
+<?php if (have_posts()): the_post(); ?>
+<h1 class="mod-heading2"><?php the_title(); ?></h1>
+<?php
+  the_content();
+  endif;
+?>
+</div><!-- /.l-section -->
+</div><!-- /.l-main-inner -->
+{% endblock %}
