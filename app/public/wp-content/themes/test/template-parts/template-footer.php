@@ -3,8 +3,6 @@
 <div class="l-footer-inner">
 <div class="l-footer-text">
 <span class="name">Mori Tomohide</span>
-<span class="text">前職ではバシャログ。にて <a href="http://bashalog.c-brains.jp/author/kouraku.php" target="_blank">kouraku</a> として<br>
-仕事に関わる内容等を展開。</span>
 <span class="text">Email: kourakukibun@hotmail.com</span>
 </div><!-- /.l-footer-text -->
 <figure class="l-footer-image">
