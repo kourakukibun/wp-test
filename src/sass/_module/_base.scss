@@ -41,6 +41,14 @@ figure {
 	}
 }
 
+iframe {
+	margin: calcvw(40) 0;
+	border: none;
+	@include media-pc {
+		margin: 40px 0;
+	}
+}
+
 em {
 	font-style: normal;
 	font-weight: bold;

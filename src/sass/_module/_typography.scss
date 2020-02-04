@@ -76,10 +76,14 @@ article h2,
 article h3,
 .mod-heading4 {
 	margin: calcvw(30) 0 0;
-	font-size: calcvw(32);
+	padding: 0 0 0 calcvw(20);
+	border-left: calcvw(4) solid #333;
+	font-size: calcvw(36);
 	@include media-pc {
 		margin: 30px 0 0;
-		font-size: 1.6rem;
+		padding: 0 0 0 10px;
+		border-width: 2px;
+		font-size: 1.8rem;
 	}
 }
 
